@@ -174,3 +174,12 @@ values.rendered.yaml
 values.decoded.yaml
 values.decrypted.yaml
 manifests.yaml
+
+
+#
+# Generated files
+#
+
+*_p2p.py
+*_pb2.py
+*_pb2.pyi
