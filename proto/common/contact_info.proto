@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package odp;
+
+message ContactInfo {
+  string contact = 1;
+  optional string organization = 2;
+}

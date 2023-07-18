@@ -1,0 +1,56 @@
+[tool.poetry]
+name = "odp-dto"
+version = "0.1.0"
+description = ""
+authors = ["Thomas Li Fredriksen <thomas.fredriksen@oceandata.earth>"]
+readme = "README.md"
+packages = [
+    {include = "odp/dto"}
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pydantic = "<2.0.0"
+
+
+[tool.poetry.group.dev.dependencies]
+isort = "^5.12.0"
+black = "^23.7.0"
+tomli = "^2.0.1"
+
+[tool.poetry.build]
+generate-setup-file = false
+script = "scripts/build.py"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+
+[build-system.requires]
+poetry-core = "^1.6.1"
+grpcio-tools = "^1.56.0"
+protobuf-to-pydantic = "^0.1.7.4"
+mypy-protobuf = "^3.4.0"
+meson = "^1.2.0"
+setuptools = "^68.0.0"
+importlib-metadata = "^6.8.0"
+importlib-resources = "^6.0.0"
+
+
+[tool.pytest.ini_options]
+log_cli = "true"
+testpaths = [
+    "tests"
+]
+
+[tool.flake8]
+ignore = ["E203", "E731", "W503"]
+per-file-ignores = ["*/__init__.py:F401", "tests/*:F841"]
+max-line-length = 120
+count = true
+
+[tool.isort]
+line_length=120                # corresponds to -w  flag
+multi_line_output=3            # corresponds to -m  flag
+include_trailing_comma=true    # corresponds to -tc flag
+profile="black"
+known_local_folder="odp,tests"

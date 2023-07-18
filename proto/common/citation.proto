@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+
+package odp;
+
+message Citation {
+  string citeAs = 1;
+  string doi = 2;
+}
