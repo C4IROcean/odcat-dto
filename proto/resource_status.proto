@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-import "google/protobuf/timestamp.proto";
-import "common/uuid.proto";
-
 package odp;
+
+import "common/uuid.proto";
+import "google/protobuf/timestamp.proto";
 
 message ResourceStatus {
   int64 num_updates = 1;

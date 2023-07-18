@@ -12,8 +12,8 @@ def proto_files(source_dir: Path):
 
 
 def build_protoc(source_dir: Path, build_dir: Path):
-    from grpc_tools import protoc
     import importlib_resources
+    from grpc_tools import protoc
 
     well_known_protos_include = importlib_resources.files("grpc_tools") / "_proto"
 
@@ -44,4 +44,3 @@ def build(setup_kwargs):
 
 if __name__ == "__main__":
     build({})
-

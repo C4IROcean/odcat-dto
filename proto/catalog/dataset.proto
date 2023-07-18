@@ -1,13 +1,12 @@
 syntax = "proto3";
 
-import "metadata.proto";
-import "resource_status.proto";
-import "common/contact_info.proto";
-import "common/citation.proto";
-import "common/attribute.proto";
-
 package odp.catalog;
 
+import "common/attribute.proto";
+import "common/citation.proto";
+import "common/contact_info.proto";
+import "metadata.proto";
+import "resource_status.proto";
 
 message DatasetSpec {
   string storage_class = 1;
@@ -18,7 +17,6 @@ message DatasetSpec {
   repeated Attribute attributes = 6;
   repeated string tags = 7;
 }
-
 
 message Dataset {
   string kind = 1;
