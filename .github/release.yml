@@ -1,0 +1,22 @@
+# .github/release.yml
+
+changelog:
+  exclude:
+    labels:
+      - maintenance
+  categories:
+    - title: Enhancements
+      labels:
+        - enhancement
+    - title: Fixes
+      labels:
+        - bug
+    - title: Deprecations
+      labels:
+        - deprecation
+    - title: Documentation
+      labels:
+        - documentation
+    - title: Miscellaneous
+      labels:
+        - "*"
