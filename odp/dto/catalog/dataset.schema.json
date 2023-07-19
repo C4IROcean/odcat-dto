@@ -1,0 +1,106 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$ref": "#/definitions/DatasetSpec",
+    "definitions": {
+        "DatasetSpec": {
+            "required": [
+                "storage_class",
+                "maintainer"
+            ],
+            "properties": {
+                "storage_class": {
+                    "type": "string",
+                    "description": "The storage class qualified name of the dataset"
+                },
+                "storage_controller": {
+                    "type": "string",
+                    "description": "Storage controller qualified name"
+                },
+                "data_collection": {
+                    "type": "string",
+                    "description": "Data collection qualified name"
+                },
+                "maintainer": {
+                    "$ref": "#/definitions/odp.ContactInfo",
+                    "additionalProperties": false,
+                    "description": "Active maintainer contact information"
+                },
+                "citation": {
+                    "$ref": "#/definitions/odp.Citation",
+                    "additionalProperties": true,
+                    "description": "Information on how to cite the dataset"
+                },
+                "documentation": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "description": "Links to any relevant documentation"
+                },
+                "attributes": {
+                    "items": {
+                        "$ref": "#/definitions/odp.Attribute"
+                    },
+                    "type": "array",
+                    "description": "Dataset attributes"
+                },
+                "tags": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "description": "Dataset tags to aid with search and discovery"
+                }
+            },
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Dataset Spec",
+            "description": "* DatasetSpec defines the dataset metadata such as documentation links, citation information, attributes, etc"
+        },
+        "odp.Attribute": {
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "traits": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Attribute"
+        },
+        "odp.Citation": {
+            "properties": {
+                "cite_as": {
+                    "type": "string"
+                },
+                "doi": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Citation"
+        },
+        "odp.ContactInfo": {
+            "properties": {
+                "contact": {
+                    "type": "string"
+                },
+                "organization": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Contact Info"
+        }
+    }
+}

@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package odp.catalog;
+
+import "odp/dto/common/attribute.proto";
+import "odp/dto/common/citation.proto";
+import "odp/dto/common/contact_info.proto";
+import "odp/dto/metadata.proto";
+import "odp/dto/resource_status.proto";
+import "options.proto";
+
+/**
+  * DatasetSpec defines the dataset metadata such as documentation links, citation information, attributes, etc
+  */
+message DatasetSpec {
+
+  // The storage class qualified name of the dataset
+  string storage_class = 1 [(protoc.gen.jsonschema.field_options).required = true];
+
+  // Storage controller qualified name
+  optional string storage_controller = 2;
+
+  // Data collection qualified name
+  optional string data_collection = 3;
+
+  // Active maintainer contact information
+  ContactInfo maintainer = 4;
+
+  // Information on how to cite the dataset
+  optional Citation citation = 5;
+
+  // Links to any relevant documentation
+  repeated string documentation = 6;
+
+  // Dataset attributes
+  repeated Attribute attributes = 7;
+
+  // Dataset tags to aid with search and discovery
+  repeated string tags = 8;
+}
+
+message Dataset {
+  string kind = 1;
+  string version = 2;
+  Metadata metadata = 3;
+  ResourceStatus status = 4;
+  DatasetSpec spec = 5;
+}

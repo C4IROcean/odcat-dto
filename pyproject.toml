@@ -12,11 +12,25 @@ packages = [
 python = "^3.8"
 pydantic = "<2.0.0"
 
+[tool.poetry.group.build]
+optional = true
+
+[tool.poetry.group.build.dependencies]
+poetry-core = "^1.6.1"
+grpcio-tools = "^1.56.0"
+protobuf-to-pydantic = "^0.1.7.4"
+mypy-protobuf = "^3.4.0"
+meson = "^1.2.0"
+setuptools = "^68.0.0"
+importlib-metadata = "^6.8.0"
+importlib-resources = "^6.0.0"
+datamodel-code-generator = "^0.21.1"
 
 [tool.poetry.group.dev.dependencies]
 isort = "^5.12.0"
 black = "^23.7.0"
 tomli = "^2.0.1"
+toml = "^0.10.2"
 
 [tool.poetry.build]
 generate-setup-file = false
@@ -34,6 +48,9 @@ meson = "^1.2.0"
 setuptools = "^68.0.0"
 importlib-metadata = "^6.8.0"
 importlib-resources = "^6.0.0"
+isort = "^5.12.0"
+black = "^23.7.0"
+toml = "^0.10.2"
 
 
 [tool.pytest.ini_options]
@@ -54,3 +71,8 @@ multi_line_output=3            # corresponds to -m  flag
 include_trailing_comma=true    # corresponds to -tc flag
 profile="black"
 known_local_folder="odp,tests"
+
+[tool.protobuf-to-pydantic.format]
+black = true
+isort = true
+autoflake = true

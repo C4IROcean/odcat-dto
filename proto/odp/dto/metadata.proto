@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package odp;
 
-import "common/uuid.proto";
+import "odp/dto/common/uuid.proto";
 
 message Metadata {
   string name = 1;

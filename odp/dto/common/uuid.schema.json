@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$ref": "#/definitions/UUID",
+    "definitions": {
+        "UUID": {
+            "properties": {
+                "value": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": true,
+            "type": "object",
+            "title": "UUID"
+        }
+    }
+}
