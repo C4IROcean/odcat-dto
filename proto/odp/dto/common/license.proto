@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package odp;
+
+import "options.proto";
+
+
+// Dataset license information
+message License {
+
+  // License name. Can be set to `Proprietary` for proprietary licenses
+  string name = 1 [(protoc.gen.jsonschema.field_options).required = true];
+
+  // HREF to license text
+  optional string href = 2;
+
+  // Full license text
+  optional string full_text = 3;
+}

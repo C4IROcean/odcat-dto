@@ -24,7 +24,7 @@ message DatasetSpec {
   optional string data_collection = 3;
 
   // Active maintainer contact information
-  ContactInfo maintainer = 4;
+  ContactInfo maintainer = 4 [(protoc.gen.jsonschema.field_options).required = true];
 
   // Information on how to cite the dataset
   optional Citation citation = 5;
@@ -40,9 +40,9 @@ message DatasetSpec {
 }
 
 message Dataset {
-  string kind = 1;
-  string version = 2;
-  Metadata metadata = 3;
-  ResourceStatus status = 4;
-  DatasetSpec spec = 5;
+  string kind = 1 [(protoc.gen.jsonschema.field_options).required = true];
+  string version = 2 [(protoc.gen.jsonschema.field_options).required = true];
+  Metadata metadata = 3 [(protoc.gen.jsonschema.field_options).required = true];
+  optional ResourceStatus status = 4;
+  DatasetSpec spec = 5 [(protoc.gen.jsonschema.field_options).required = true];
 }
