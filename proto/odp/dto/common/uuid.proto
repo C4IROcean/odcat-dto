@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-package odp;
-
-message UUID {
-  string value = 1;
-}
